@@ -1,0 +1,15 @@
+prompts:
+  - "Summarize this text in one sentence:\n{{text}}"
+
+providers:
+  - openai:gpt-3.5-turbo
+
+tests:
+  - vars:
+      text: |
+        Promptfoo is a CLI tool to systematically test and compare prompts for LLMs. It helps you avoid regressions and improve prompt quality.
+    assert:
+      - type: contains
+        value: "Promptfoo"
+      - type: contains
+        value: "test"

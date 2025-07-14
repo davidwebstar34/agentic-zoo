@@ -1,0 +1,15 @@
+targets:
+  - id: my-llm-api
+    name: My LLM API
+    type: http
+    url: https://clzngwfhz1.execute-api.eu-west-1.amazonaws.com/test
+    method: POST
+    headers:
+      Content-Type: application/json
+      x-api-key: { { API_KEY } }
+    input_variable: prompt
+    input_body: |
+      {
+        "prompt": "{{prompt}}"
+      }
+    output_path: result
